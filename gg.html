@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parabéns, você venceu!</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .message {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        top: 20;
+    }
+    .options {
+        display: flex;
+    }
+    .option {
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .option:hover {
+        background-color: white;
+        color: black;
+    }
+    .link{
+        color: white;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+    <audio autoplay loop style="display: none;">
+        <source src="musics/MineWarriors Ost - GG - Menu.mpeg" type="audio/mpeg">
+    </audio>
+
+<div class="container">
+    <div class="message">Parabéns, você venceu!</div>
+    <div class="options">
+        <a class="link" href="menuprincipal.html"><div class="option" onmouseover="expandOption(this)" onmouseout="collapseOption(this)">Menu Principal</div></a>
+        <a class="link" href="galeriadeconquistas.html"><div class="option" onmouseover="expandOption(this)" onmouseout="collapseOption(this)">Galeria de Conquistas</div></a>
+    </div>
+</div>
+
+<script>
+    function expandOption(element) {
+        element.style.transform = "scale(1.1)";
+    }
+    function collapseOption(element) {
+        element.style.transform = "scale(1)";
+    }
+</script>
+
+</body>
+</html>

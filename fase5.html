@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batalha Naval</title>
+<style>
+
+    .grid-container {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(10, 50px);
+        grid-template-rows: repeat(10, 50px);
+        gap: 1px;
+        border: 1px solid black;
+        width: 510px;
+        
+    }
+ 
+    .grid-item {
+        background-image: url("images/Mira.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+ 
+    .hit {
+        background-image: url("images/Navio\ 5.png") , linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+ 
+    .water {
+        background-image: url("images/agua.png") , linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* Estilos para centralizar a tabela */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+    }
+</style>
+</head>
+<body style="background-image: url(images/bgfase5.jpeg); background-repeat: no-repeat; background-size: cover; image-rendering: pixelated;">
+
+    <audio autoplay loop style="display: none;">
+        <source src="musics/MineWarriors Ost - Fase5 - BAATH.mpeg" type="audio/mpeg">
+    </audio>
+
+<div class="container">
+    <div class="grid-container" id="gridContainer">
+        <!-- Cells will be added here dynamically -->
+    </div>
+</div>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const gridContainer = document.getElementById("gridContainer");
+    const gridSize = 10; // 10x10 grid
+    const ships = [
+        { size: 5, name: "Carrier" },
+        { size: 4, name: "Battleship" },
+        { size: 3, name: "Cruiser" },
+        { size: 2, name: "Destroyer" },
+        { size: 1, name: "Mata Submarino" },
+    ];
+ 
+    let placedShips = [];
+ 
+    // Function to create grid cells
+    function createGrid() {
+        for (let i = 0; i < gridSize; i++) {
+            for (let j = 0; j < gridSize; j++) {
+                const cell = document.createElement("div");
+                cell.classList.add("grid-item");
+                cell.setAttribute("data-x", i);
+                cell.setAttribute("data-y", j);
+                cell.addEventListener("click", shoot);
+                gridContainer.appendChild(cell);
+            }
+        }
+    }
+ 
+    // Function to randomly position ships
+    function positionShips() {
+        for (const ship of ships) {
+            let orientation = Math.floor(Math.random() * 2) === 0 ? "horizontal" : "vertical";
+            let x, y;
+
+            if (orientation === "horizontal") {
+                x = Math.floor(Math.random() * (gridSize - ship.size + 1));
+                y = Math.floor(Math.random() * gridSize);
+            } else {
+                x = Math.floor(Math.random() * gridSize);
+                y = Math.floor(Math.random() * (gridSize - ship.size + 1));
+            }
+
+            const newShip = { name: ship.name, positions: [] };
+
+            for (let i = 0; i < ship.size; i++) {
+                const newX = orientation === "horizontal" ? x + i : x;
+                const newY = orientation === "vertical" ? y + i : y;
+                newShip.positions.push({ x: newX, y: newY });
+                const className = "ship-" + ship.name.replace(/\s+/g, '-').toLowerCase();
+                const cell = document.querySelector(`.grid-item[data-x="${newX}"][data-y="${newY}"]`);
+                cell.classList.add(className, "ship"); // Adiciona a classe específica para o tipo de navio e a classe genérica "ship"
+            }
+
+            placedShips.push(newShip);
+        }
+    }
+ 
+// Function to handle shooting
+function shoot(event) {
+    const x = parseInt(event.target.getAttribute("data-x"));
+    const y = parseInt(event.target.getAttribute("data-y"));
+    const cell = placedShips.some(ship => ship.positions.some(pos => pos.x === x && pos.y === y)) ? "hit" : "water";
+    event.target.classList.add(cell);
+    event.target.removeEventListener("click", shoot);
+   
+    // Check if all ships are sunk
+    if (placedShips.every(ship => ship.positions.every(pos => {
+        const targetCell = document.querySelector(`.grid-item[data-x="${pos.x}"][data-y="${pos.y}"]`);
+        return targetCell.classList.contains("hit");
+    }))) {
+        alert("Você venceu!"); // Exibe o alerta "Você venceu"
+        // Redirecionar para outra página após clicar em "OK"
+        window.location.href = "gg.html"; // Substitua "outra_pagina.html" pelo URL da página desejada
+    }
+}
+ 
+    // Call functions to create grid and position ships
+    createGrid();
+    positionShips();
+});
+</script>
+ 
+</body>
+</html>

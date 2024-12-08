@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+    <title>Tela de Cadastro</title>
+    <style>
+.bemvindo {
+    text-align: center;
+    font-size: medium;
+    padding-top: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    color: black;
+}
+.body{
+    background-image: url(images/loginback.jpeg);
+    background-repeat: no-repeat;
+    background-position: 30% 45%;
+    background-size: cover;
+    background-color: white;
+
+}
+.icone-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+}
+ 
+.icone {
+    height: 200%;
+    margin: 30px;
+    transition: transform 0.3s ease;
+    border: black 5px solid;
+   
+}
+.desc{
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0.1em #333;
+    font-weight: bold;
+}
+.box{
+    justify-content: center;
+    text-align: center;
+}
+
+
+</style>
+
+</head>
+<body class="body">
+    <h1 class="bemvindo"> M O D O  <br> DE <br> JOGO</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="icone-container">
+        <div class="box">
+        <a href="cadastropad.html"><img src="images/Singleplayer - Icon.png" class="icone" alt="1"></a>
+        <br>
+        </div>
+        <div class="box">
+        <a href="cadastrotre.html"><img src="images/Multiplayer - Icon.png" class="icone" alt=""></a>
+        <br>
+    </div>
+
+    <script>
+        var icones= document.querySelectorAll('.icone');
+        icones.forEach(function(icone) {
+                icone.addEventListener('mouseover', function() {
+                    icone.style.transform = 'scale(1.4)';
+                    icone.style.transition = 'transform 0.3s ease';
+                });
+     
+                icone.addEventListener('mouseout', function() {
+                    icone.style.transform = 'scale(1.0)';
+                    icone.style.transition = 'transform 0.3s ease';
+                });
+            });
+      </script>
+
+</body>
+</html

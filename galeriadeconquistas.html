@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Conquistas</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            image-rendering: pixelated;
+            position: relative; /* Para posicionar o botão de voltar */
+            text-align: center;
+        }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 800px;
+            padding-left: 20%;
+            padding-top: 80%;
+        }
+
+        .conquista {
+            width: calc(50% - 10px);
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            margin-top: 5%;
+        }
+
+        .conquista-img {
+            flex: 0 0 100px;
+            margin-right: 20px;
+        }
+
+        .conquista-texto {
+            flex: 1;
+        }
+
+        .conquista-titulo {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .conquista-descricao {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        header {
+            background-color: #000; /* Cor de fundo do cabeçalho */
+            padding: 20px 0; /* Espaçamento interno superior e inferior */
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+            top:0
+        }
+
+        header h1 {
+            margin: 0; /* Remover margem padrão */
+            color: #fff; /* Cor do texto branco */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombreamento ao texto */
+        }
+        .baú {
+            width: 200px;
+    height: 200px;
+    background-color: #8B4513; /* Cor marrom */
+    border: 4px solid #FFD700; /* Cor dourada para a borda */
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 20px; /* Espaçamento entre o baú e a senha */
+    margin: 0 auto;
+    margin-left: 60%;
+        }
+
+      .chave {
+    width: 30px;
+    height: 30px;
+    background-color: #A9A9A9; /* Cor cinza para a chave */
+    position: absolute;
+    bottom: 50%; /* Posiciona a chave abaixo do baú */
+    left: 50%; /* Centraliza a chave horizontalmente */
+    transform: translateX(-50%);
+    border: 4px solid #FFD700; /* Cor dourada para a borda da chave */
+    border-radius: 50%;
+        }
+        .menu-senha {
+    display: none;
+    margin-top: 20px; /* Adiciona espaço entre o baú e o menu de senha */
+    text-align: center;
+}
+
+.menu-senha input[type="password"] {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.menu-senha button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Cor azul para o botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    cursor: pointer;
+}
+.container-bau {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+        <header>
+            <a href="menuprincipal.html"> <div class="back-button">&#8592;</div></a>
+            <h1 class="header">Galeria de conquistas</h1>
+        </header>
+
+    <audio autoplay loop style="display: none;">
+        <source src="musics/MineWarriors Ost - Galeria de conquistas - Sans.m4a" type="audio/mpeg">
+    </audio>
+
+<div class="galeria">
+    <div class="conquista">
+        <img src="images/conq1.png" alt="Conquista 1" class="conquista-img">
+        <div class="conquista-texto">
+            <div class="conquista-titulo">Hora da vingança</div>
+            <div class="conquista-descricao">Vença o estágio das planícies</div>
+        </div>
+    </div>
+
+    <div class="conquista">
+        <img src="images/conq2.png" alt="Conquista 2" class="conquista-img">
+        <div class="conquista-texto">
+            <div class="conquista-titulo">Um buraco sem fim</div>
+            <div class="conquista-descricao">Vença o estágio das cavernas</div>
+        </div>
+    </div>
+    <div class="conquista">
+        <img src="images/Conq3.png" alt="Conquista 2" class="conquista-img">
+        <div class="conquista-texto">
+            <div class="conquista-titulo">Julgamento do inferno </div>
+            <div class="conquista-descricao">Vença o estágio do Nether</div>
+        </div>
+    </div>
+    <div class="conquista">
+        <img src="images/conq4.png" alt="Conquista 2" class="conquista-img">
+        <div class="conquista-texto">
+            <div class="conquista-titulo">Vazio da alma</div>
+            <div class="conquista-descricao">Vença o estágio do fim</div>
+        </div>
+    </div>
+    <div class="conquista">
+        <img src="images/conq5.png" alt="Conquista 2" class="conquista-img">
+        <div class="conquista-texto">
+            <div class="conquista-titulo">Um duelo brutal</div>
+            <div class="conquista-descricao">Vença o estágio do Aether</div>
+        </div>
+    </div>
+
+    <div class="conquista">
+        <img src="images/Conq6.png" alt="Conquista 2" class="conquista-img">
+        <div class="conquista-texto">
+            <div class="conquista-titulo">Saneees</div>
+            <div class="conquista-descricao">Descrição da conquista<br> Hehehe, ruim até os ossos, encontre meu easter egg</div>
+        </div>
+    </div>
+    <div style="flex-basis: 100%; height: 20px;"></div>
+    <div class="container-bau">
+        <div class="baú" onclick="exibirMenuSenha()">
+            <div class="chave"></div>
+        </div>
+        <!-- Adicione este código abaixo do baú -->
+        <div class="menu-senha" style="display: none;">
+            <input type="password" id="senha" placeholder="Digite a senha">
+            <button onclick="verificarSenha()">Enviar</button>
+        </div>
+    </div>
+
+
+        <script>
+    // JavaScript para destacar as conquistas ao passar o mouse
+    const conquistas = document.querySelectorAll('.conquista');
+
+    conquistas.forEach(conquista => {
+        conquista.addEventListener('mouseover', () => {
+            conquista.style.opacity = '0.7';
+        });
+
+        conquista.addEventListener('mouseout', () => {
+            conquista.style.opacity = '1';
+        });
+    });
+
+    function exibirMenuSenha() {
+    var menuSenha = document.querySelector('.menu-senha');
+    menuSenha.style.display = 'block';
+    }
+
+    function verificarSenha() {
+    var senhaDigitada = document.getElementById('senha').value;
+    var senhaCorreta = 'Herobrine'; // Defina a senha correta aqui
+
+    if (senhaDigitada === senhaCorreta) {
+        alert('Conquista desbloqueada - 101%!, Você é o bichão mesmo hein doido ?');
+    } else {
+        alert('Senha incorreta. Tente novamente.');
+    }
+}
+
+    </script>
+
+</body>
+</html>

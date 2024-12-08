@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batalha Naval</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: green; /* Cor de fundo */
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        height: 85%;
+        background-color: red;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        width: 50px;
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .cell_G5{
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <div id="tabuleiro1">
+        <table id="tabela1">
+            <tbody>
+                <!-- Aqui vai a primeira tabela -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var tabelaBody = document.querySelector("#tabela1 tbody");
+
+        // Loop para criar as linhas e células da tabela
+        for (var i = 0; i <= 10; i++) {
+            var row = document.createElement("tr");
+            for (var j = 0; j <= 10; j++) {
+                var cell = document.createElement("td");
+                if (i === 0 && j > 0) {
+                    // Adiciona letras de A a J nas células da primeira linha
+                    cell.textContent = String.fromCharCode(64 + j);
+                } else if (j === 0 && i > 0) {
+                    // Adiciona números de 1 a 10 nas células da primeira coluna
+                    cell.textContent = i;
+                }
+                row.appendChild(cell);
+            }
+            tabelaBody.appendChild(row);
+        }
+    });
+</script>
+
+</body>
+</html>

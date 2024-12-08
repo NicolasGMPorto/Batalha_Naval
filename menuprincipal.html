@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111; /* Cor de fundo escura */
+            color: #fff; /* Cor do texto */
+            padding-bottom: 50px; /* Espaço para o rodapé */
+            padding-left: 20px; /* Margem esquerda */
+            padding-right: 20px; /* Margem direita */
+            image-rendering: pixelated;
+        }
+
+        header {
+            background-color: #000; /* Cor de fundo do cabeçalho */
+            padding: 20px 0; /* Espaçamento interno superior e inferior */
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0; /* Remover margem padrão */
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 30px; /* Espaçamento entre o cabeçalho e o menu */
+        }
+
+        nav ul {
+            list-style-type: none; /* Remove os marcadores de lista */
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block; /* Exibir os itens de menu na mesma linha */
+            margin: 0 20px; /* Espaçamento horizontal entre os itens de menu */
+        }
+
+        nav a {
+            color: #fff; /* Cor do texto do link */
+            text-decoration: none; /* Remover sublinhado padrão */
+            font-size: 20px; /* Tamanho da fonte */
+            padding: 10px 20px; /* Espaçamento interno */
+            border: 2px solid #007bff; /* Borda com cor azul */
+            border-radius: 10px; /* Bordas arredondadas */
+            transition: background-color 0.3s, color 0.3s; /* Transição suave de cor ao passar o mouse */
+        }
+
+        nav a:hover {
+            background-color: #007bff; /* Cor de fundo ao passar o mouse */
+            color: #111; /* Cor do texto ao passar o mouse */
+        }
+
+        #carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-top: 50px; /* Espaçamento entre o menu e o carrossel */
+        }
+
+        #carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: fit-content; /* Ajuste para largura automática com base no tamanho das imagens */
+        }
+
+        .carousel-image {
+            flex: 0 0 auto; /* Remover flex-grow e flex-shrink */
+            max-width: 90%; /* Ajustar a largura máxima das imagens */
+            display: block; /* Exibir todas as imagens inicialmente */
+            width: 100%; /* Ajustar a largura da imagem */
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .control {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .control:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .secret{
+            height: 20px;
+            width: 2%;
+            float: left;
+            cursor: pointer;
+            position: absolute;
+            display: block;
+            opacity: 0.2;
+        }
+        #submitButton {
+            margin-top: 10px;
+            font-size: 16px;
+            padding: 8px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #submitButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <img class="secret" id="imagemSecreta" src="images/sans easter egg.jpeg" alt="Imagem Secreta">
+
+
+    <audio id="mainAudio" src="musics/MineWarriors Ost - Menu - Shop.m4a" autoplay loop style="display: none;"></audio>
+
+    <header>
+        <h1>MINE WARRIORS</h1>
+    </header>
+
+
+    <form id="passwordForm">
+        <input type="password" id="passwordInput" placeholder="Digite a senha">
+        <button type="submit" id="submitButton">Entrar</button>
+    </form>
+    
+    <nav>
+        <ul>
+            <li><a href="modohistoria.html">Modo história</a></li>
+            <li><a href="galeriadeconquistas.html">Conquistas</a></li>
+            <li><a href="extras.html">Extras</a></li>
+        </ul>
+    </nav>
+    </div>
+    
+    <!-- Adicione a imagem secreta -->
+    
+    <audio id="audio" src="musics/Easter Egg - Sans.m4a" preload="auto"></audio>
+
+    <script>
+        // Obtém a referência para a música principal e do easter egg
+        var mainAudio = document.getElementById('mainAudio');
+        var easterEggAudio = document.getElementById('audio');
+
+        // Evento de clique na imagem secreta
+        document.getElementById('imagemSecreta').addEventListener('click', () => {
+            // Reproduz a música do easter egg quando a imagem secreta é clicada
+            easterEggAudio.play();
+            // Pausa a música principal quando a música do easter egg começa a tocar
+            mainAudio.pause();
+            // Alerta de conquista desbloqueada
+            alert("Conquista desbloqueada - Saneees"); 
+            // Desbloqueando a primeira conquista
+            desbloquearConquista(1); 
+            // Enviando mensagem de desbloqueio para a galeria de conquistas
+            enviarMensagemDesbloqueio(1); 
+        });
+
+        // Evento de escuta para detectar quando a música do easter egg termina de tocar
+        easterEggAudio.addEventListener('ended', () => {
+            // Retorna a reprodução da música principal ao final da música do easter egg
+            mainAudio.play();
+        });
+            // Evento de envio do formulário de senha
+            document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            var password = document.getElementById('passwordInput').value;
+
+            // Verifica se a senha está correta
+            if (password === 'Edsonmedamb') { // Substitua 'suasenha' pela senha desejada
+                // Redireciona para outra página
+                window.location.href = 'secret.html';
+            } else {
+                // Exibe uma mensagem de erro caso a senha esteja incorreta
+                alert('Na minha época era mais fácil');
+            }
+        });
+    </script>
+</body>
+</html>

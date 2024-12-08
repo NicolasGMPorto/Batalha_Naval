@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo História</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111; /* Cor de fundo escura */
+            color: #fff; /* Cor do texto */
+            text-align: center; /* Centraliza o conteúdo */
+            position: relative;
+        }
+
+        header {
+            background-color: #000; /* Cor de fundo do cabeçalho */
+            padding: 20px 0; /* Espaçamento interno superior e inferior */
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0; /* Remover margem padrão */
+            color: #fff; /* Cor do texto branco */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombreamento ao texto */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px; /* Espaçamento superior */
+        }
+
+        .phase-button {
+            background-color: transparent;
+            border: 2px solid #fff; /* Borda branca */
+            border-radius: 20px; /* Borda arredondada */
+            padding: 20px;
+            margin-bottom: 20px; /* Espaçamento entre os botões */
+            width: 200px;
+            transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+            color: white;
+        }
+
+        .phase-button:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo ao passar o mouse */
+        }
+
+        .phase-button img {
+            width: 100px; /* Tamanho da imagem */
+            border-radius: 50%; /* Bordas arredondadas */
+            margin-bottom: 10px; /* Espaçamento entre a imagem e o texto */
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="menuprincipal.html"> <div class="back-button">&#8592;</div></a>
+    <h1>Modo História</h1>
+</header>
+
+<div class="container">
+    <a href="fase1.html">
+    <button class="phase-button">
+        <img src="images/Fase1- Icon.png" alt="Fase 1"> <!-- Imagem da Fase 1 -->
+        <div>Fase 1- Vila dos mineiros</div> <!-- Nome da Fase 1 -->
+    </a>
+    </button>
+    <a href="fase2.html">
+    <button class="phase-button">
+        <img src="images/Fase2- Icon.png" alt="Fase 2"> <!-- Imagem da Fase 2 -->
+        <div>Fase 2- Cavernas Ancestrais</div> <!-- Nome da Fase 2 -->
+    </a>
+    </button>
+    <a href="fase3.html">
+    <button class="phase-button">
+        <img src="images/Fase3- Icon.png" alt="Fase 3"> <!-- Imagem da Fase 3 -->
+        <div>Fase 3- O inferno</div> <!-- Nome da Fase 3 -->
+        </a>
+    </button>
+    <a href="fase4.html">
+    <button class="phase-button">
+        <img src="images/Fase4- Icon.png" alt="Fase 4"> <!-- Imagem da Fase 4 -->
+        <div>Fase 4- O fim de tudo ?</div> <!-- Nome da Fase 4 -->
+    </a>
+    </button>
+    <a href="fase5.html">
+    <button class="phase-button">
+        <img src="images/Fase5- Icon.png" alt="Fase 5"> <!-- Imagem da Fase 5 -->
+        <div>Fase 5- A cidade lendária</div> <!-- Nome da Fase 5 -->
+    </a>
+    </button>
+</div>
+
+</body>
+</html>

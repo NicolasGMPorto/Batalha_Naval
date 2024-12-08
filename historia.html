@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História em Quadrinhos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            image-rendering: pixelated;
+            background-color: #111; /* Alterei a cor de fundo para um tom mais escuro */
+            color: #fff; /* Alterei a cor do texto para branco */
+        }
+
+        #container-quadrinhos { 
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .quadrinho {
+            width: calc(50% - 10px); /* 50% da largura da linha com espaço entre */
+            margin-bottom: 20px;
+            border-bottom: 2px solid black; /* Adiciona uma linha preta entre cada quadrinho */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao redor do quadrinho */
+        }
+
+        .quadrinho img {
+            width: 100%;
+            display: block;
+            border-radius: 5px; /* Adiciona um leve arredondamento às imagens */
+        }
+
+        .legendas {
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo com transparência para as legendas */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Borda com transparência */
+            border-top: none; /* Remove a borda superior para evitar duplicação */
+            border-radius: 0 0 5px 5px; /* Adiciona um leve arredondamento à parte inferior das legendas */
+        }
+        .botao-comecar {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            margin-bottom: 50px;
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px; /* Bordas arredondadas */
+            transition: transform 0.3s; /* Transição para o efeito de aumento */
+        }
+
+        .botao-comecar:hover {
+            transform: scale(1.15); /* Aumenta um pouco o tamanho ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <audio autoplay loop style="display: none;">
+        <source src="musics/MineWarriors Ost - History - Respite.mpeg" type="audio/mpeg">
+    </audio>
+
+    <div id="container-quadrinhos">
+        <div class="row">
+            <div class="quadrinho">
+                <img src="images/Frame1.png" alt="Frame 1">
+                <div class="legendas">
+                    Os Villareanos são uma raça guerreira de piratas que viajavam pelos 7 mares do mundo quadrado de Minecraft, junto de seu capitão Steve, o conquistador
+                </div>
+            </div>
+            <div class="quadrinho">
+                <img src="images/Frame2.png" alt="Frame 2">
+                <div class="legendas">
+                    Steve era uma lenda pois havia derrotado o Dragão do Fim e o Wither Boss, os monstros que dominavam o mundo
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="quadrinho">
+                <img src="images/Frame3.png" alt="Frame 1">
+                <div class="legendas">
+                    Ele trouxe muita paz para os aldeões e eles prosperaram durante muito tempo
+                </div>
+            </div>
+            <div class="quadrinho">
+                <img src="images/Frame4.png" alt="Frame 2">
+                <div class="legendas">
+                    Até que Warden, o rei das profundezas despertou
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="quadrinho">
+                <img src="images/Frame5.png" alt="Frame 1">
+                <div class="legendas">
+                    E ele trouxe o caos e corrupção para os 3 mundos de minecraft
+                </div>
+            </div>
+            <div class="quadrinho">
+                <img src="images/Frame6.png" alt="Frame 2">
+                <div class="legendas">
+                    Steve tentou o impedir, porém, sofreu um ataque sônico que o deixou à beira da morte
+                </div>
+            </div>
+        </div>
+        <center>
+            <div class="quadrinho">
+                <img src="images/Frame7.png" alt="Frame 2">
+                <div class="legendas">
+                    Após 2 anos, Steve retornou, junto com uma tripulação de piratas, e agora, ele busca sua vingança contra o, agora Rei do mundo, Warden
+                </div>
+            </div>
+        </div>
+    </center>
+    <a href="menuprincipal.html" class="botao-comecar">Ajude Steve</a>
+</body>
+</html>
